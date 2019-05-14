@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Post{% endtrans %}{% endblock %}
+
+{% block body %}
+     <table class="table">
+        <tbody>
+            <tr>
+                <th>{% trans %}Username{% endtrans %}</th>
+                <td>{{ post.username }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ post.email }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Homepage{% endtrans %}</th>
+                <td>{{ post.homepage }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Text{% endtrans %}</th>
+                <td>{{ post.text | raw }}</td>
+            </tr>
+            <tr>
+                <th>{% trans %}Eng text{% endtrans %}</th>
+                <td>{{ post.altText }}</td>
+            </tr>
+            {% if post.image %}
+            <tr>
+                <th>{% trans %}Image{% endtrans %}</th>
+                <td><img class="upload" src="/uploads/images/{{ post.image }}" alt="{{ post.image }}"></td>
+            </tr>
+            {% endif %}
+            <tr>
+                <th>{% trans %}Date{% endtrans %}</th>
+                <td>{{ post.date }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

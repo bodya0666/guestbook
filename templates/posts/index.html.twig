@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans into app.request.cookies.get('lang') %}My posts{% endtrans %}{% endblock %}
+
+{% block body %}
+
+    <h1>{% trans into app.request.cookies.get('lang') %}My posts{% endtrans %}</h1>
+    <a class="add_btn" href="{{ path('posts_new') }}"><div class="add"><i class="fas fa-plus"></i> {% trans into app.request.cookies.get('lang') %}Add{% endtrans %}</div></a>
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>{% trans into app.request.cookies.get('lang') %}Homepage{% endtrans %}</th>
+                <th>{% trans into app.request.cookies.get('lang') %}Text{% endtrans %}</th>
+                <th>{% trans into app.request.cookies.get('lang') %}Eng text{% endtrans %}</th>
+                <th>{% trans into app.request.cookies.get('lang') %}Date{% endtrans %}</th>
+                <th>{% trans into app.request.cookies.get('lang') %}Show{% endtrans %}</th>
+                <th>{% trans into app.request.cookies.get('lang') %}Actions{% endtrans %}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+
+            <tr>
+                <td>{{ post.homepage }}</td>
+                <td>{{ post.text | raw }}</td>
+                <td>{{ post.altText | raw }}</td>
+                <td>{{ post.date }}</td>
+                <td>{{ post.status ? 'Yes'|trans : 'No'|trans }}</td>
+                <td class="action">
+                    <a href="{{ path('posts_show', {'id': post.id}) }}">{% trans into app.request.cookies.get('lang') %}show{% endtrans %}</a>
+                    <a href="{{ path('posts_edit', {'id': post.id}) }}">{% trans into app.request.cookies.get('lang') %}edit{% endtrans %}</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">{% trans into app.request.cookies.get('lang') %}no records found{% endtrans %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(posts) }}
+    </div>
+
+{% endblock %}

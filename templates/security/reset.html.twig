@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Reset password{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans %}Reset password{% endtrans %}</h1>
+    {{ form_start(form) }}
+    {{ form_row(form.email) }}
+    <button class="btn">{% trans %}Send{% endtrans %}</button>
+    {{ form_end(form) }}
+{% endblock %}

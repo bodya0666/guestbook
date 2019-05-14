@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% trans %}Change language{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans into app.request.cookies.get('lang') %}Language{% endtrans %}</h1>
+    {{form(form)}}
+
+
+{% endblock %}

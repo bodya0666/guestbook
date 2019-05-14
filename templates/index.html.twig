@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans into app.request.cookies.get('lang') %}Main page{% endtrans %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans %}Main page{% endtrans %}</h1>
+    {% if is_granted('ROLE_USER') %}
+    <a class="add_btn" href="{{ path('posts_new') }}"><div class="add"><i class="fas fa-plus"></i> {% trans into app.request.cookies.get('lang') %}Add{% endtrans %}</div></a>
+    {% endif %}
+    <table>
+        <tr>
+            <th><a href="{{ path('main') }}{{ username }}">{% trans into app.request.cookies.get('lang') %}Username{% endtrans %}</a></th>
+            <th><a href="{{ path('main') }}{{ email }}">Email</a></th>
+            <th>{% trans into app.request.cookies.get('lang') %}Text{% endtrans %}</th>
+            <th>{% trans into app.request.cookies.get('lang') %}Homepage{% endtrans %}</th>
+            <th><a href="{{ path('main') }}{{ date }}">{% trans into app.request.cookies.get('lang') %}Date{% endtrans %}</a></th>
+            <th>{% trans into app.request.cookies.get('lang') %}Action{% endtrans %}</th>
+        </tr>
+        {% for post in posts %}
+            <tr>
+                <td>{{ post.username }}</td>
+                <td>{{ post.email }}</td>
+                <td>
+                    {% if post.AltText is defined and post.AltText is not empty and app.request.cookies.get('lang') == 'en' %}
+                    {{ post.AltText | raw }}
+                    {% else %}
+                    {{ post.text | raw }}
+                    {% endif %}
+                </td>
+                <td>{{ post.homepage }}</td>
+                <td>{{ post.date }}</td>
+                <td class="action">
+                    <a href="{{ path('posts_show', {'id': post.id}) }}">{% trans into app.request.cookies.get('lang') %}show{% endtrans %}</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">{% trans into app.request.cookies.get('lang') %}no records found{% endtrans %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="navigation">
+        {{ knp_pagination_render(posts) }}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,181 @@
+body{
+	background: #6CC372;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+*{
+	color: #fff;
+	font-size: 16px ;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+*::selection{
+	background: #6CC372;
+	color: #fff;
+}
+header .fas{
+	font-size: 1.6em;
+	color: #6CC372;
+}
+header{
+	position: fixed;
+	width: 100%;
+	max-width: 1100px;
+	background: #fff;
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 50px;
+	z-index: 999999;
+}
+.profile a{
+	margin: 0 4px;
+}
+.nav a{
+	margin: 0 0 0 7px;
+}
+table, th, td {
+	border: 4px solid #fff;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 25px;
+	text-align: left;
+}
+table{
+	margin: 0;
+	color: #fff;
+
+	font-weight: bold;
+	font-size: 16px ;
+	padding: 20px 50px;
+}
+.pagination{
+	color: #fff;
+	font-size: 16px;
+	margin: 10px 0 0 0;
+	font-weight: bold;
+
+}
+.pagination span a{
+	color: #fff;
+	margin: 3px;
+
+}
+.profile{
+	display: flex;
+	align-items: center;
+	color: #6CC372;
+}
+.profile span{
+	color: #6CC372;
+	padding: 0 10px 0 0;
+}
+.wrapper{
+	margin: 100px 0 0 0;
+	width: 100%;
+	max-width: 1100px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.add_btn{
+	color: #6CC372;
+	background: #fff;
+	width: 150px;
+	height: 50px;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0;
+	text-decoration: none;
+}
+.add{
+	color: #6CC372;
+	display: flex;
+	align-items: center;
+}
+.add_btn i{
+	color: #6CC372;
+	font-size: 1.5em;
+	margin: 0 5px 0 0;
+}
+.add_btn:hover{
+	text-decoration: none;
+}
+.action a {
+	text-decoration: none;
+}
+.action a:hover{
+	text-decoration: underline;
+}
+form {
+	background: #fff;
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 50px;
+	width: 100%;
+	max-width: 1100px;
+	margin: 25px 0 25px -25px;
+}
+.BDC_CaptchaDiv{
+	display: block;
+}
+form div {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+form label{
+	color: #6CC372;
+}
+button{
+	cursor: pointer;
+}
+label, input, textarea, button{
+	margin: 5px 0;
+}
+button{
+	background: #6CC372;
+	border: none;
+	padding: 15px 30px;
+}
+input, textarea{
+	color: #6CC372;
+	padding: 10px;
+}
+.nav a{
+	margin: 0 10px;
+}
+header a{
+	color: #6CC372;
+	text-decoration: none;
+}
+header a:hover{
+	text-decoration: underline;
+}
+.upload{
+	width: 100%;
+	max-width: 720px;
+}
+option, select{
+	color: #6CC372;
+}
+.fa-globe-americas{
+	margin: 0 10px 0 0;
+}
+.alert, li{
+	color: #6CC372;
+}
+li{
+	display: block;
+	padding: 10px;
+}
